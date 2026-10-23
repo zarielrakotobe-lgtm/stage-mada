@@ -5,4 +5,4 @@ __pycache__/
 node_modules/
 dist/
 staticfiles/
-db.sqlite3
+db.sqlite3backend/media/
