@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../AuthContext.jsx'
 import Notifications from './Notification.jsx'
@@ -5,6 +6,7 @@ import Notifications from './Notification.jsx'
 export default function Navbar() {
   const { user, logout } = useAuth()
   const navigate = useNavigate()
+  const [menu, setMenu] = useState(false)
 
   function seDeconnecter() {
     logout()
@@ -12,12 +14,23 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="navbar bg-base-200 shadow-lg px-6 flex-wrap gap-2">
+    <nav className="navbar bg-base-200 shadow-lg px-3 sm:px-6 flex-wrap gap-2">
       <div className="flex-1">
         <Link to="/" className="text-xl font-bold text-primary">Stage Madagascar</Link>
       </div>
 
-      <div className="flex items-center gap-2">
+      {user && <Notifications />}
+
+      <button className="btn btn-ghost btn-square lg:hidden" onClick={() => setMenu(!menu)}>
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <div
+        className={(menu ? 'flex' : 'hidden') + ' lg:flex flex-col lg:flex-row items-stretch lg:items-center gap-2 w-full lg:w-auto'}
+        onClick={() => setMenu(false)}
+      >
         <Link to="/" className="btn btn-ghost btn-sm">Offres</Link>
         <Link to="/a-propos" className="btn btn-ghost btn-sm">A propos</Link>
 
@@ -29,7 +42,6 @@ export default function Navbar() {
 
         {user ? (
           <>
-            <Notifications />
             <span className="font-semibold">{user.nom}</span>
             <button className="btn btn-outline btn-sm" onClick={seDeconnecter}>Déconnexion</button>
           </>

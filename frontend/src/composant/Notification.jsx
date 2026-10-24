@@ -51,7 +51,7 @@ export default function Notifications() {
       </button>
 
       {ouvert && (
-        <div className="absolute right-0 mt-2 w-80 max-h-96 overflow-y-auto bg-base-200 rounded-box shadow-xl z-50">
+        <div className="fixed left-2 right-2 top-16 sm:absolute sm:left-auto sm:right-0 sm:top-auto sm:mt-2 sm:w-80 max-h-96 overflow-y-auto bg-base-200 rounded-box shadow-xl z-50">
           <div className="flex justify-between items-center p-3 border-b border-base-300">
             <strong>Notifications</strong>
             {nonLues > 0 && <button className="link link-primary text-xs" onClick={toutLire}>Tout marquer comme lu</button>}
