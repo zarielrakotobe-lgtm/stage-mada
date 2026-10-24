@@ -28,7 +28,7 @@ export default function CandidaturesOffre() {
         {liste.map((c) => (
           <div className="card bg-base-200 shadow" key={c.Code_can}>
             <div className="card-body">
-              <h3 className="card-title">{c.etudiant_nom}</h3>
+              <h3 className="card-title text-primary">{c.etudiant_nom}</h3>
               <p>{c.etudiant_email} — Filière : {c.etudiant_Filiere}</p>
               <p>Reçue le {c.date} — <Etat statut={c.statut} /></p>
               <div className="card-actions">

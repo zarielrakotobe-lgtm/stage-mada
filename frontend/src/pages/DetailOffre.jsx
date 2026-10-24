@@ -54,7 +54,7 @@ export default function DetailOffre() {
         {user?.role === 'etudiant' && offre.statut === 'ouverte' && (
           <form className="card bg-base-200 shadow-xl max-w-md" onSubmit={postuler}>
             <div className="card-body gap-3">
-              <h3 className="card-title">Postuler</h3>
+              <h3 className="card-title text-primary">Postuler</h3>
               {message && <div className="alert alert-success">{message}</div>}
               {erreur && <div className="alert alert-error">{erreur}</div>}
   

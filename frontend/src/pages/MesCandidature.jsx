@@ -18,7 +18,7 @@ export default function MesCandidatures() {
         {liste.map((c) => (
           <div className="card bg-base-200 shadow" key={c.Code_can}>
             <div className="card-body">
-              <h3 className="card-title">{c.offre_titre}</h3>
+              <h3 className="card-title text-primary">{c.offre_titre}</h3>
               <p>{c.nom_ent} — envoyée le {c.date}</p>
               <div><Etat statut={c.statut} /></div>
             </div>

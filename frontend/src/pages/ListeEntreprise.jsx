@@ -41,7 +41,7 @@ export default function ListeEntreprise() {
         {liste.map((e) => (
           <div className="card bg-base-200 shadow" key={e.Code_ent}>
             <div className="card-body">
-              <h3 className="card-title">
+              <h3 className="card-title text-primary">
                 {e.nom}
                 {!e.actif && <span className="badge badge-error">Banni</span>}
               </h3>

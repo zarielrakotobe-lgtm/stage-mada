@@ -41,7 +41,7 @@ export default function ListeEtudiant() {
         {liste.map((e) => (
           <div className="card bg-base-200 shadow" key={e.code_et}>
             <div className="card-body">
-              <h3 className="card-title">
+              <h3 className="card-title text-primary">
                 {e.prenom} {e.nom}
                 {!e.actif && <span className="badge badge-error">Banni</span>}
               </h3>

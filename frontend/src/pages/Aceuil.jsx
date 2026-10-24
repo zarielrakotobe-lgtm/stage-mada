@@ -29,7 +29,7 @@ export default function Accueil() {
         {offres.map((o) => (
           <div className="card bg-base-200 shadow" key={o.ref_off}>
             <div className="card-body">
-              <h3 className="card-title">{o.titre}</h3>
+              <h3 className="card-title text-primary">{o.titre}</h3>
               <p>Date de mise sur le site : {o.Date_post}</p>
               <p><strong>{o.nom_ent}</strong> — {o.ville_ent}</p>
               <p>Durée : {o.Duree}</p>

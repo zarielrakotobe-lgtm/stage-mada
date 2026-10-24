@@ -46,7 +46,7 @@ export default function MesOffres() {
 
       <form className="card bg-base-200 shadow-xl max-w-md mb-8" onSubmit={publier}>
         <div className="card-body gap-3">
-          <h3 className="card-title">Publier une nouvelle offre</h3>
+          <h3 className="card-title text-primary">Publier une nouvelle offre</h3>
           {erreur && <div className="alert alert-error">{erreur}</div>}
           <input className={champ} placeholder="Titre du stage" required value={form.titre} onChange={changer('titre')} />
           <input className={champ} placeholder="Durée (ex : 3 mois)" required value={form.Duree} onChange={changer('Duree')} />
@@ -64,7 +64,7 @@ export default function MesOffres() {
         {offres.map((o) => (
           <div className="card bg-base-200 shadow" key={o.ref_off}>
             <div className="card-body">
-              <h3 className="card-title">{o.titre}</h3>
+              <h3 className="card-title text-primary">{o.titre}</h3>
               <p>Durée : {o.Duree} - Date limite : {o.Date_limite}</p>
               <p>Statut : <Etat statut={o.statut} /> — {o.nb_candidatures} candidature(s)</p>
               <div className="card-actions">
